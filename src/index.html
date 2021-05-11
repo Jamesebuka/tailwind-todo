@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo Ui</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-gray-200">
+    <div class="container rounded-t-lg mt-4 max-w-md mx-auto text-lg font-bold text-white mx-auto p-4 bg-purple-400 text-center">
+        Todo UI Design
+    </div>
+    <div class="container text-white p-3 mt-5 min-h-full font-bold rounded-md bg-purple-300 max-w-md mx-auto">
+        <ul id="list">
+            <li ondblclick="remove()" id="one">Study by 12am</li>
+            <li ondblclick="remove()" id="two">Complete my Vue js project</li>
+            <li ondblclick="remove()" id="three">Master Tailwind tonight</li>
+            <li ondblclick="remove()" id="four">Buy a new laptop</li>
+        </ul>
+    </div>
+    <div class="container max-w-md mx-auto mt-5 p-3 rounded-b-xl bg-purple-300 flex justify-between">
+        <input type="submit" onclick="addTodo();" value="Add" class="p-3 ml-8 mr-8 max-w-full text-white flex-auto rounded-md bg-purple-500">
+    </div>
+
+
+    <script>
+        // Function to add a todo
+       function addTodo(){
+        var name = window.prompt("Add New Todo: ");
+        // alert("Your name is " + name);
+        list = document.getElementsByTagName('ul')[0];
+        newItem = document.createElement('li');
+        newText = document.createTextNode(name);
+        newItem.appendChild(newText);
+        list.appendChild(newItem);
+       }
+
+        //Function to remove a todo
+        function remove(){
+            var element = document.getElementById("");
+	        element.parentNode.removeChild(element);
+        }
+     </script>
+</body>
+</html>
